@@ -1,1 +1,3 @@
+/JsonReader/bin/objects/*.o
+/JsonReader/bin/JsonReader.a
 .vscode/

@@ -27,10 +27,6 @@ Il suffit ensuite de lancer le makefile et d'éxécuter le programme ./Exemple/e
 Le code est libre, vous pouvez l'utiliser pour ce que vous souhaitez. Mais citer l'utilisation de cette libraire et son auteur est très appréciable.
 
 ## ToDos
-
-- [ ] Ajouter des commentaires aux sources, cela va arriver prochainement. 
-- [ ] Ajouter la gestion d'exception lors du parsing et de la manipulation des objets Json.
-- [ ] Ajouter une meilleure gestion de la conversion vers/à partir du json. Notamment la conversion de map et de vector.
 - [ ] Ajouter la gestion des commentaires lors du parsing, cela n'est pas encore géré et causera un segemntation fault.
 - [ ] Améliorer le readme.
 

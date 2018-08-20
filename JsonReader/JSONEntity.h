@@ -8,7 +8,7 @@
 #include "JSONException.h"
 /**
  * @brief
- *
+ *Defines all types of JSONEntity
  */
 enum JSONTYPE{ARRAY,VAR_NUMBER,VAR_STRING,VAR_BOOL,VAR_NULL,VAR_CONTAINER,OBJECT};
 /**
@@ -46,12 +46,5 @@ class JSONEntity
 	protected:
 	  JSONTYPE m_type;
 };
-/**
- * @brief
- * 
- * @param flow 
- * @param e 
- * @return std::ostream& 
- */
 std::ostream& operator<<(std::ostream& flow,JSONEntity& e);
 #endif

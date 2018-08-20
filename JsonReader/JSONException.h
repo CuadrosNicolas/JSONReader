@@ -2,6 +2,11 @@
 #define JSONEXCEPTION
 #include <iostream>
 #include <exception>
+/**
+ * @brief
+ * Declaration of all possible exception that can occure
+ * while using a JSONEntity or JSONParser
+ */
 struct BadFormatedFile : public std::exception
 {
 	const char *what() const throw()

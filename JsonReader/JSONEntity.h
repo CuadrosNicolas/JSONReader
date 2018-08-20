@@ -5,13 +5,14 @@
 #include <vector>
 #include <map>
 #include <fstream>
+#include "JSONException.h"
 /**
  * @brief
  *
  */
 enum JSONTYPE{ARRAY,VAR_NUMBER,VAR_STRING,VAR_BOOL,VAR_NULL,VAR_CONTAINER,OBJECT};
 /**
- * @brief
+ * @brief Base class for creating JSON Entity.
  *
  */
 class JSONEntity

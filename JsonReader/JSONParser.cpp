@@ -209,6 +209,9 @@ JSONEntity *JSONParser::parse()
 		}
 	}
 	JSONEntity *temp = stack.top();
+	stack.pop();
+	if(temp==NULL or stack.top()!= NULL or s!=state::A)
+		throw BadFormatedFile();
 	return temp;
 
 }

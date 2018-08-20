@@ -9,11 +9,11 @@ void JSONEntity::assign(JSONEntity *entity)
 }
  JSONEntity& JSONEntity::operator[](std::string s)
 {
-	return *this;
+	throw BadAccessObject();
 }
  JSONEntity & JSONEntity::operator[](unsigned int i)
 {
-	return *this;
+	throw BadAccessArray();
 }
 size_t JSONEntity::getSize()
 {
@@ -21,11 +21,11 @@ size_t JSONEntity::getSize()
 }
 std::vector<JSONEntity *> *JSONEntity::getArray()
 {
-	return NULL;
+	throw NotConvertableToArray();
 }
 std::map<std::string, JSONEntity *> *JSONEntity::getMap()
 {
-	return NULL;
+	throw NotConvertableToMap();
 }
 std::string JSONEntity::getValue()
 {
@@ -50,7 +50,9 @@ int JSONEntity::toint()
 	if (getType() == VAR_NUMBER)
 		return std::stoi(getValue());
 	else
-		return 0;
+	{
+		throw NotConvertableToInt();
+	}
 }
 float JSONEntity::tofloat()
 {
@@ -58,7 +60,7 @@ float JSONEntity::tofloat()
 		return std::stof(getValue());
 	}
 	else{
-		return 0;
+		throw NotConvertableToFloat();
 	}
 }
 double JSONEntity::todouble()
@@ -66,7 +68,9 @@ double JSONEntity::todouble()
 	if (getType() == VAR_NUMBER)
 		return std::stof(getValue());
 	else
-		return 0;
+		{
+			throw NotConvertableToDouble();
+		}
 }
 std::string JSONEntity::tostring()
 {
@@ -77,14 +81,12 @@ std::string JSONEntity::tostring()
 }
 bool JSONEntity::tobool()
 {
-	if(getType()!=VAR_BOOL)
-		return false;
-	else
+	if(getType()==VAR_BOOL)
 	{
 		if(getValue()=="true")
 			return true;
 		if(getValue()=="false")
 			return false;
 	}
-	return false;
+	throw NotConvertableToBool();
 }

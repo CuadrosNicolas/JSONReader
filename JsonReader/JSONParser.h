@@ -1,5 +1,6 @@
 #ifndef JSONPARSER
 #define JSONPARSER
+#include "JSONException.h"
 #include "JSONEntity.h"
 #include "JSONArray.h"
 #include "JSONObject.h"
